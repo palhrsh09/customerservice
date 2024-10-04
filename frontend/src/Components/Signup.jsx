@@ -8,7 +8,7 @@ const SignupForm = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('customer');
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,9 +25,7 @@ const SignupForm = () => {
         role,
       });
       alert('Signup successful!');
-      navigate("/dashboard"); 
-
-      // Redirect to login or dashboard
+      navigate('/dashboard'); 
     } catch (error) {
       console.error('Signup failed:', error.response.data.message);
     }
@@ -112,6 +110,17 @@ const SignupForm = () => {
         >
           Sign Up
         </button>
+
+        {/* Smaller and more compact login section */}
+        <div className="flex flex-col items-center justify-center mt-4">
+          <p className="text-gray-600 text-sm">Already a user?</p>
+          <h5
+            className="text-blue-500 text-sm font-semibold underline cursor-pointer"
+            onClick={() => navigate("/")}
+          >
+            Log in here
+          </h5>
+        </div>
       </form>
     </div>
   );

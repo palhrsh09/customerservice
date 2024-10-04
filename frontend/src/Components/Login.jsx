@@ -65,6 +65,16 @@ const LoginForm = () => {
         >
           Login
         </button>
+
+        <div className="flex flex-col items-center justify-center mt-4">
+          <p className="text-gray-600 text-sm">Not a user?</p>
+          <h5
+            className="text-blue-500 text-sm font-semibold underline cursor-pointer"
+            onClick={() => navigate("/signup")}
+          >
+            Sign up here
+          </h5>
+        </div>
       </form>
     </div>
   );
